@@ -1,0 +1,52 @@
+.flex {
+  display: flex;
+}
+.a-i--center {
+  align-items: center;
+}
+.j-c--center {
+  justify-content: center;
+}
+.j-c--between {
+  justify-content: space-between;
+}
+.f--wrap {
+  flex-wrap: wrap;
+}
+.f--column {
+  flex-direction: column;
+}
+.txt-a--center {
+  text-align: center;
+}
+.f-s-20 {
+  font-size: 3.125rem;
+}
+.f-s-14 {
+  font-size: 2.1875rem;
+}
+.m--top {
+  margin-top: 3vh;
+}
+@media (min-width: 1024px) {
+  .f--row {
+    flex-direction: row;
+  }
+  .m--top {
+    margin-top: 0;
+  }
+  .f-s-20 {
+    font-size: 32px;
+  }
+  .f-s-14 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1600px) {
+  .f-s-20 {
+    font-size: 40px;
+  }
+  .f-s-14 {
+    font-size: 26px;
+  }
+}
