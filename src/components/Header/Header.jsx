@@ -1,4 +1,5 @@
 import HeaderHeading from "../HeaderHeading/HeaderHeading";
+import HeaderParagraph from "../HeaderParagraph/HeaderParagraph";
 
 const Header = () => {
   return (
@@ -7,6 +8,16 @@ const Header = () => {
       id="header"
     >
       <HeaderHeading />
+      <HeaderParagraph
+        className={"header__heading txt-a--center"}
+        id={"header-paragraph"}
+        text={"Bilans wynosi zero"}
+      />
+      <HeaderParagraph
+        className={"header__error"}
+        id={"header-error"}
+        text={"Musisz najpierw zakończyć edycję!"}
+      />
     </header>
   );
 };
