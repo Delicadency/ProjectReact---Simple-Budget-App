@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+  .main {
+    width: 1024px;
+    height: 550px;
+    align-self: center;
+  }
+}
+@media (min-width: 1600px) {
+  .main {
+    width: 1580px;
+    height: 790px;
+  }
+}
