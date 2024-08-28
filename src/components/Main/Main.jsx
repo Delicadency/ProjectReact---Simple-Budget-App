@@ -4,8 +4,8 @@ import Section from "../Section/Section";
 const Main = () => {
   return (
     <main className="flex main f--column f--row">
-      <Section id={"income"} />
-      <Section id={"expense"} />
+      <Section type={"income"} />
+      <Section type={"expense"} />
     </main>
   );
 };

@@ -1,6 +1,6 @@
-const Section = ({ id }) => {
+const Section = ({ type }) => {
   return (
-    <section className="flex f--wrap a-i--center j-c--center" id={id}></section>
+    <section className="flex f--wrap a-i--center j-c--center" id={type}></section>
   );
 };
 
