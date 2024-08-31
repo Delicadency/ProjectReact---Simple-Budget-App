@@ -13,8 +13,8 @@
 }
 @media (min-width: 1024px) {
   .container {
-    width: 504px;
-    height: 484px;
+    width: 500px;
+    height: 480px;
   }
   .income__container {
     border: 2px solid var(--income-primary);
