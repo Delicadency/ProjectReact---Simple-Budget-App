@@ -12,6 +12,10 @@
   border: 0.15625vh solid var(--expense-primary);
 }
 @media (min-width: 1024px) {
+  .container {
+    width: 504px;
+    height: 484px;
+  }
   .income__container {
     border: 2px solid var(--income-primary);
   }
