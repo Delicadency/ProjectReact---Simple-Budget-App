@@ -9,7 +9,7 @@ const Header = () => {
     >
       <HeaderHeading />
       <HeaderParagraph
-        className={"header__heading txt-a--center"}
+        className={"header__paragraph txt-a--center"}
         id={"header-paragraph"}
         text={"Bilans wynosi zero"}
       />
