@@ -1,0 +1,42 @@
+.input__InputWrapper--edit-text {
+  width: 65%;
+}
+.input__InputWrapper--edit-amount {
+  width: 30%;
+}
+.input__InputWrapper--text {
+  width: 50%;
+  height: auto;
+}
+.input__InputWrapper--amount {
+  width: 21%;
+  height: auto;
+}
+@media (min-width: 1024px) {
+  .input__InputWrapper--text {
+    width: 250px;
+  }
+  .input__InputWrapper--edit-text {
+    width: 200px;
+  }
+  .input__InputWrapper--amount {
+    width: 80px;
+  }
+  .input__InputWrapper--edit-amount {
+    width: 80px;
+  }
+}
+@media (min-width: 1600px) {
+  .input__InputWrapper--text {
+    width: 386px;
+  }
+  .input__InputWrapper--edit-text {
+    width: 350px;
+  }
+  .input__InputWrapper--amount {
+    width: 140px;
+  }
+  .input__InputWrapper--edit-amount {
+    width: 130px;
+  }
+}
