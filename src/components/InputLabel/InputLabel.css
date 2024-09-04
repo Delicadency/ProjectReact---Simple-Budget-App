@@ -1,0 +1,16 @@
+.error_label {
+  width: 15%;
+  height: auto;
+  color: var(--error);
+  font-size: 1.3rem;
+  display: none;
+  position: absolute;
+  transform: translate(0, -1.2vh);
+}
+@media (min-width: 1024px) {
+  .error_label {
+    width: 150px;
+    font-size: 14px;
+    transform: translate(0, -14px);
+  }
+}
