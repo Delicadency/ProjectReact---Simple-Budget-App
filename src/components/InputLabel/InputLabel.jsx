@@ -7,7 +7,7 @@ const InputLabel = ({ prop }) => {
   return (
     <label
       className="error_label"
-      for={`${type}-${prop}`}
+      htmlFor={`${type}-${prop}`}
       id={`${type}-${prop}-error`}
     >
       Uzupełnij pole

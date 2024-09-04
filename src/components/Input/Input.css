@@ -1,0 +1,96 @@
+.input {
+  height: 4.375vh;
+  background-color: var(--light);
+  border: none;
+  border-radius: 0.3125vh;
+  font-family: "Sofia Sans", sans-serif;
+  font-variant: small-caps;
+}
+.input::placeholder {
+  font-family: "Sofia Sans", sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+}
+.input--income,
+.input--income::placeholder {
+  color: var(--income-primary);
+}
+.input--expense,
+.input--expense::placeholder {
+  color: var(--expense-primary);
+}
+.input--income:focus {
+  outline: 0.15625vh solid var(--income-primary);
+}
+.input--expense:focus {
+  outline: 0.15625vh solid var(--expense-primary);
+}
+.input--edit {
+  width: 100%;
+  height: 3.6vh;
+  outline: 0.1vh solid;
+  outline-color: inherit;
+}
+.input--text {
+  width: 100%;
+  position: relative;
+}
+.input--amount {
+  width: 100%;
+  position: relative;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+.input--amount::-webkit-inner-spin-button,
+.input--amount::-webkit-outer-spin-button,
+.input--edit::-webkit-outer-spin-button,
+.input--edit::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .input {
+    height: 35px;
+    border-radius: 2px;
+  }
+  .input--income:focus {
+    outline: 2px solid var(--income-primary);
+  }
+  .input--expense:focus {
+    outline: 2px solid var(--expense-primary);
+  }
+  .input--text {
+    width: 250px;
+  }
+  .input--edit {
+    height: 30px;
+  }
+  .input--amount {
+    width: 80px;
+  }
+  .input::placeholder {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1600px) {
+  .input {
+    height: 60px;
+  }
+  .input--text {
+    width: 386px;
+  }
+  .input--amount {
+    width: 140px;
+  }
+  .input__button {
+    width: 140px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .input::placeholder {
+    font-size: 24px;
+  }
+  .input--edit {
+    height: 50px;
+  }
+}
