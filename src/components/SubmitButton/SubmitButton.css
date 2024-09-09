@@ -1,0 +1,124 @@
+.input__button {
+  width: 21%;
+  height: 4.375vh;
+  border: none;
+  border-radius: 0.3125vh;
+  font-family: "Sofia Sans", sans-serif;
+  font-variant: small-caps;
+}
+.input__button--income {
+  background-color: var(--income-primary);
+  color: var(--light);
+}
+.input__button--income:active {
+  background-color: var(--light);
+  color: var(--income-primary);
+}
+.input__button--expense {
+  background-color: var(--expense-primary);
+  color: var(--light);
+}
+.input__button--expense:active {
+  background-color: var(--light);
+  color: var(--expense-primary);
+}
+.list__button {
+  width: 3.125vh;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0.7vh;
+}
+.edit {
+  background-image: url("/public/images/pen.svg");
+}
+.edit--income {
+  background-color: var(--income-secondary);
+}
+.edit--income:active {
+  background-image: url("/public/images/pen-income.svg");
+  background-color: var(--light);
+}
+.edit--expense {
+  background-color: var(--expense-secondary);
+}
+.edit--expense:active {
+  background-image: url("/public/images/pen-expense.svg");
+  background-color: var(--light);
+}
+.delete {
+  background-image: url("/public/images/trash.svg");
+}
+.delete--income {
+  background-color: var(--income-primary);
+}
+.delete--income:active {
+  background-image: url("/public/images/trash-income.svg");
+  background-color: var(--light);
+}
+.delete--expense {
+  background-color: var(--expense-primary);
+}
+.delete--expense:active {
+  background-image: url("/public/images/trash-expense.svg");
+  background-color: var(--light);
+}
+.save {
+  background-image: url("/public/images/save.svg");
+}
+.save--income {
+  background-color: var(--income-secondary);
+}
+.save--income:active {
+  background-image: url("/public/images/save-income.svg");
+  background-color: var(--light);
+}
+.save--expense {
+  background-color: var(--expense-secondary);
+}
+.save--expense:active {
+  background-image: url("/public/images/save-expense.svg");
+  background-color: var(--light);
+}
+.cancel {
+  background-image: url("/public/images/x.svg");
+}
+.cancel--income {
+  background-color: var(--income-secondary);
+}
+.cancel--income:active {
+  background-image: url("/public/images/x-income.svg");
+  background-color: var(--light);
+}
+.cancel--expense {
+  background-color: var(--expense-secondary);
+}
+.cancel--expense:active {
+  background-image: url("/public/images/x-expense.svg");
+  background-color: var(--light);
+}
+@media (min-width: 1024px) {
+  .input__button {
+    width: 80px;
+    height: 37px;
+    border-radius: 2px;
+    font-size: 18px;
+  }
+  .list__button {
+    width: 25px;
+    margin: 0 5px;
+  }
+}
+@media (min-width: 1600px) {
+  .input__button {
+    width: 140px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .list__button {
+    width: 43px;
+  }
+}
