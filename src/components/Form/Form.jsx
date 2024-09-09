@@ -8,10 +8,7 @@ const Form = () => {
   const type = useContext(TypeContext);
 
   return (
-    <form
-      className={`flex j-c--between ${type}__container"`}
-      id={`${type}-form`}
-    >
+    <form className={`flex j-c--between input__container`} id={`${type}-form`}>
       <InputWrapper prop="text" />
       <InputWrapper prop="amount" />
       <SubmitButton isFormButton={true} listButtonType={""} text={"Dodaj"} />

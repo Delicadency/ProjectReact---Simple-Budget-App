@@ -2,6 +2,7 @@ import "./FormSection.css";
 import { useContext } from "react";
 import TypeContext from "../TypeContext/TypeContext";
 import Form from "../Form/Form";
+import List from "../List/List";
 
 const FormSection = () => {
   const type = useContext(TypeContext);
@@ -12,6 +13,7 @@ const FormSection = () => {
       id={`${type}-inputs`}
     >
       <Form />
+      <List />
     </section>
   );
 };
