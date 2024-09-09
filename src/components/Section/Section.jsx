@@ -3,6 +3,7 @@ import { useContext } from "react";
 import TypeContext from "../TypeContext/TypeContext";
 import SectionParagraph from "../SectionParagraph/SectionParagraph";
 import FormSection from "../FormSection/FormSection";
+import List from "../List/List";
 
 const Section = () => {
   const type = useContext(TypeContext);
@@ -16,6 +17,7 @@ const Section = () => {
         <SectionParagraph text={"0,00"} id={`total-${type}`} />
       </div>
       <FormSection />
+      <List />
     </section>
   );
 };
