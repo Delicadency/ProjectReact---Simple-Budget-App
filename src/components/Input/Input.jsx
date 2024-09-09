@@ -8,7 +8,7 @@ const Input = ({ prop }) => {
   const amountAttributes =
     prop === "amount"
       ? {
-          palceholder: "Kwota",
+          placeholder: "Kwota",
           pattern: "^\\d{0,7}(\\.\\d{0,2})?$",
           inputMode: "numeric",
           step: "0.01",
