@@ -19,6 +19,10 @@ const SectionForm = () => {
         <SectionInput prop="amount" type={type} />
         <SubmitButton isFormButton={true} listButtonType={""} text={"Dodaj"} />
       </form>
+      <ul
+      className={`flex f--wrap list__container list__container--${type} f-s-14`}
+      id={`${type}-list`}
+    ></ul>
     </section>
   );
 };

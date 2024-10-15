@@ -1,13 +1,17 @@
-import "./ListElement.css";
-import { useContext } from "react";
-import TypeContext from "../../contexts/TypeContext";
+import SubmitButton from "../../common/SubmitButton";
 
-const ListElement = (dataID) => {
-  const type = useContext(TypeContext);
+const ListElement = (dataID, text) => {
 
-  return <li className="flex a-i--center list__element" data-id={dataID}>
-    
-  </li>;
+  return (
+    <li className="flex a-i--center list__element" data-id={dataID}>
+      <p class="flex a-i--center j-c--between list__paragraph">
+        {text}
+      </p>
+      <SubmitButton isFormButton={false} listButtonType="edit" />
+      <SubmitButton isFormButton={false} listButtonType="delete" />
+
+    </li>
+  );
 };
 
 export default ListElement;

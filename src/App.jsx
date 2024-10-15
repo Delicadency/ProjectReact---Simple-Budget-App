@@ -6,6 +6,7 @@ import "./styles/SectionForm.css";
 import "./styles/Input.css";
 import "./styles/ErrorLabel.css";
 import "./styles/SubmitButton.css";
+import "./styles/ListElement.css";
 import ProjectContainer from "./components/ProjectContainer/ProjectContainer";
 
 const App = () => {
