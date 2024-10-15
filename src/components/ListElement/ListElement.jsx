@@ -1,6 +1,6 @@
 import "./ListElement.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 
 const ListElement = (dataID) => {
   const type = useContext(TypeContext);
