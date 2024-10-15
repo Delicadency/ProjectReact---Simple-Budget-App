@@ -1,4 +1,7 @@
-const SectionInput = ({ prop, type }) => {
+const SectionInput = ({ prop, type, value, onChange }) => {
+  const handleChange = (event) => {
+    onChange(event.target.value);
+  };
   const amountAttributes =
     prop === "amount"
       ? {
@@ -27,6 +30,8 @@ const SectionInput = ({ prop, type }) => {
         type={prop}
         id={`${type}-${prop}`}
         autoComplete="off"
+        value={value}
+        onChange={handleChange}
         {...amountAttributes}
       ></input>
     </div>
