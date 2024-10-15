@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import TypeContext from "../../contexts/TypeContext";
-import InputWrapper from "../InputWrapper/InputWrapper";
-import SubmitButton from "../SubmitButton/SubmitButton";
+import SubmitButton from "../../common/SubmitButton";
+import SectionInput from "./SectionInput";
 
 const SectionForm = () => {
   const type = useContext(TypeContext);
@@ -15,8 +15,8 @@ const SectionForm = () => {
         className={`flex j-c--between input__container`}
         id={`${type}-form`}
       >
-        <InputWrapper prop="text" />
-        <InputWrapper prop="amount" />
+        <SectionInput prop="text" type={type} />
+        <SectionInput prop="amount" type={type} />
         <SubmitButton isFormButton={true} listButtonType={""} text={"Dodaj"} />
       </form>
     </section>

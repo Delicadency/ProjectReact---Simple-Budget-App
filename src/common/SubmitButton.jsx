@@ -1,6 +1,5 @@
-import "./SubmitButton.css";
 import { useContext } from "react";
-import TypeContext from "../../contexts/TypeContext";
+import TypeContext from "../contexts/TypeContext";
 
 const SubmitButton = ({ isFormButton, listButtonType, text }) => {
   const type = useContext(TypeContext);
