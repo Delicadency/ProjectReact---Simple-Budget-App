@@ -1,6 +1,6 @@
 import "./List.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 
 const List = () => {
   const type = useContext(TypeContext);

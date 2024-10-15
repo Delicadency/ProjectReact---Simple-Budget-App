@@ -1,5 +1,5 @@
-import HeaderHeading from "../HeaderHeading/HeaderHeading";
-import HeaderParagraph from "../HeaderParagraph/HeaderParagraph";
+import HeaderHeading from "./HeaderHeading";
+import HeaderParagraph from "./HeaderParagraph";
 
 const Header = () => {
   return (

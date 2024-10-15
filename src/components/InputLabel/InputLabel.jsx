@@ -1,6 +1,6 @@
 import "./InputLabel.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 
 const InputLabel = ({ prop }) => {
   const type = useContext(TypeContext);

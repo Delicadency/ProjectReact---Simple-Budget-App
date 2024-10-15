@@ -1,6 +1,6 @@
 import "./SectionParagraph.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 
 const SectionParagraph = ({ text, id }) => {
   const type = useContext(TypeContext);

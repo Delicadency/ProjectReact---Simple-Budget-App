@@ -1,6 +1,6 @@
 import "./Section.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 import SectionParagraph from "../SectionParagraph/SectionParagraph";
 import FormSection from "../FormSection/FormSection";
 

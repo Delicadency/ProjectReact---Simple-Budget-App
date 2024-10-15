@@ -1,6 +1,6 @@
 import "./Main.css";
 import Section from "../Section/Section";
-import { TypeProvider } from "../TypeContext/TypeContext";
+import { TypeProvider } from "../../contexts/TypeContext";
 
 const Main = () => {
   return (

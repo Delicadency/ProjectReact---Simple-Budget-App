@@ -1,6 +1,6 @@
 import "./Input.css";
 import { useContext } from "react";
-import TypeContext from "../TypeContext/TypeContext";
+import TypeContext from "../../contexts/TypeContext";
 
 const Input = ({ prop }) => {
   const type = useContext(TypeContext);
