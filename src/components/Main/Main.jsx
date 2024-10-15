@@ -1,4 +1,3 @@
-import "./Main.css";
 import Section from "../Section/Section";
 import { TypeProvider } from "../../contexts/TypeContext";
 

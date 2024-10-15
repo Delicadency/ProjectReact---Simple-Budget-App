@@ -1,4 +1,3 @@
-import "./List.css";
 import { useContext } from "react";
 import TypeContext from "../../contexts/TypeContext";
 

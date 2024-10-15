@@ -1,8 +1,7 @@
-import "./Section.css";
 import { useContext } from "react";
 import TypeContext from "../../contexts/TypeContext";
-import SectionParagraph from "../SectionParagraph/SectionParagraph";
-import FormSection from "../FormSection/FormSection";
+import SectionParagraph from "./SectionParagraph";
+import SectionForm from "./SectionForm";
 
 const Section = () => {
   const type = useContext(TypeContext);
@@ -12,10 +11,11 @@ const Section = () => {
         <SectionParagraph
           text={type === "income" ? "Przychody" : "Wydatki"}
           id={`sectionparagraph-${type}`}
+          type={type}
         />
-        <SectionParagraph text={"0,00"} id={`total-${type}`} />
+        <SectionParagraph text={"0,00"} id={`total-${type}`} type={type} />
       </div>
-      <FormSection />
+      <SectionForm />
     </section>
   );
 };

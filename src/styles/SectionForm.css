@@ -1,0 +1,71 @@
+.container {
+  width: 92.43%;
+  height: 30vh;
+  border-radius: 0.78125vh;
+}
+.income__container {
+  background-color: var(--income-secondary-transparent);
+  border: 0.15625vh solid var(--income-primary);
+}
+.expense__container {
+  background-color: var(--expense-secondary-transparent);
+  border: 0.15625vh solid var(--expense-primary);
+}
+.input__container {
+  width: 90%;
+  height: 4.375vh;
+  margin: 1.8vh 0;
+}
+.list__container {
+  width: 90%;
+  height: 19.22vh;
+  overflow: scroll;
+  align-content: start;
+}
+.list__container--income {
+  color: var(--income-primary);
+}
+.list__container--expense {
+  color: var(--expense-primary);
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 500px;
+    height: 480px;
+  }
+  .income__container {
+    border: 2px solid var(--income-primary);
+  }
+  .expense__container {
+    border: 2px solid var(--expense-primary);
+  }
+  .input__container {
+    width: 432px;
+    height: 35px;
+    margin: 27px 0 15px;
+  }
+  .list__container {
+    width: 432px;
+    height: 360px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .list__container::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    width: 775px;
+    height: 690px;
+  }
+  .input__container {
+    width: 700px;
+    height: 60px;
+  }
+  .list__container {
+    width: 700px;
+    height: 500px;
+  }
+}
