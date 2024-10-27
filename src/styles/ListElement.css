@@ -9,6 +9,13 @@
 .list__element:first-of-type {
   margin: 0;
 }
+.list__paragraph {
+  width: 70%;
+  margin: 0 1.875vh;
+}
+.list__button_container {
+  width: 21%;
+}
 @media (min-width: 1024px) {
   .list__element {
     width: 432px;
@@ -16,11 +23,26 @@
     border-radius: 2px;
     margin: 12px 0 0;
   }
+  .list__paragraph {
+    width: 310px;
+    margin: 0 20px;
+  }
+  .list__button_container {
+    width: 80px;
+    height: 35px;
+  }
 }
 @media (min-width: 1600px) {
   .list__element {
     width: 703px;
     height: 60px;
     margin: 16px 0 0;
+  }
+  .list__paragraph {
+    width: 500px;
+    margin: 0 30px;
+  }
+  .list__button_container {
+    width: 140px;
   }
 }
