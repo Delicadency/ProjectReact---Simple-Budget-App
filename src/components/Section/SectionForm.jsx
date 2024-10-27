@@ -4,7 +4,7 @@ import SubmitButton from "../../common/SubmitButton";
 import SectionInput from "./SectionInput";
 import ListElement from "../ListElement/ListElement";
 
-const SectionForm = () => {
+const SectionForm = ({ updateTotal }) => {
   const type = useContext(TypeContext);
   const [textValue, setTextValue] = useState("");
   const [amountValue, setAmountValue] = useState("");
@@ -13,11 +13,35 @@ const SectionForm = () => {
   function handleSubmit(event) {
     event.preventDefault();
     if (textValue.trim() && amountValue.trim()) {
-      console.log({ textValue, amountValue });
-      setListElements([...listElements, [textValue, amountValue]]);
+      const newAmount = parseFloat(amountValue);
+      const newElement = {
+        id: Date.now(),
+        text: textValue,
+        amount: amountValue,
+      };
+      setListElements([...listElements, newElement]);
       setTextValue("");
       setAmountValue("");
+      updateTotal((prevTotal) => prevTotal + newAmount);
     }
+  }
+
+  function deleteElement(id) {
+    const elementToDelete = listElements.find((element) => element.id === id);
+    if (!elementToDelete) return;
+    setListElements(listElements.filter((element) => element.id !== id));
+    updateTotal((prevTotal) => prevTotal - elementToDelete.amount);
+  }
+
+  function editElement(id, newText, newAmount) {
+    const updatedElements = listElements.map((element) => {
+      if (element.id === id) {
+        updateTotal((prevTotal) => prevTotal - element.amount + newAmount);
+        return { ...element, text: newText, amount: newAmount };
+      }
+      return element;
+    });
+    setListElements(updatedElements);
   }
 
   return (
@@ -48,11 +72,15 @@ const SectionForm = () => {
         className={`flex f--wrap list__container list__container--${type} f-s-14`}
         id={`${type}-list`}
       >
-        {listElements.map((listElement, index) => (
+        {listElements.map((element) => (
           <ListElement
-            key={index}
-            textValue={listElement[0]}
-            amountValue={listElement[1]}
+            key={element.id}
+            id={element.id}
+            textValue={element.text}
+            amountValue={element.amount}
+            onDelete={deleteElement}
+            onEdit={editElement}
+            type={type}
           />
         ))}
       </ul>

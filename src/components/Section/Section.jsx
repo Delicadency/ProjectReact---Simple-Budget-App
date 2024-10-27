@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TypeContext from "../../contexts/TypeContext";
 import SectionParagraph from "./SectionParagraph";
 import SectionForm from "./SectionForm";
 
 const Section = () => {
   const type = useContext(TypeContext);
+  const [total, setTotal] = useState(0);
   return (
     <section className="flex f--wrap a-i--center j-c--center" id={type}>
       <div className="flex j-c--between a-i--center container__paragraph f-s-20">
@@ -13,9 +14,13 @@ const Section = () => {
           id={`sectionparagraph-${type}`}
           type={type}
         />
-        <SectionParagraph text={"0,00"} id={`total-${type}`} type={type} />
+        <SectionParagraph
+          text={total.toFixed(2)}
+          id={`total-${type}`}
+          type={type}
+        />
       </div>
-      <SectionForm />
+      <SectionForm updateTotal={setTotal} />
     </section>
   );
 };
