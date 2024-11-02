@@ -6,14 +6,21 @@ const Input = ({
   onChange = () => {},
   isEditing,
 }) => {
+  const amountPattern = /^\d{0,6}(\,\d{0,2})?$/;
   const handleChange = (event) => {
-    onChange(event.target.value);
+    const inputValue = event.target.value;
+
+    if (prop === "amount" && !amountPattern.test(inputValue)) {
+      event.target.value = value;
+    } else {
+      onChange(inputValue);
+    }
   };
   const amountAttributes =
     prop === "amount"
       ? {
           placeholder: "Kwota",
-          pattern: "^\\d{0,7}(\\.\\d{0,2})?$",
+          pattern: "^\\d{0,6}(\\.\\d{0,2})?$",
           inputMode: "numeric",
           step: "0.01",
           maxLength: "10",
