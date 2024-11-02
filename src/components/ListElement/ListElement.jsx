@@ -13,8 +13,7 @@ const ListElement = ({
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(textValue ?? "");
   const [newAmount, setNewAmount] = useState(amountValue ?? "");
-  const amountToStringValue = amountValue.toLocaleString("pl-PL");
-  
+
   function handleSave() {
     const formattedAmount = newAmount.replace(",", ".");
     onEdit(id, newText, parseFloat(formattedAmount));
@@ -57,7 +56,8 @@ const ListElement = ({
       ) : (
         <>
           <p className="flex a-i--center j-c--between list__paragraph">
-            {textValue} - {amountToStringValue}
+            {textValue} -{" "}
+            {amountValue ? amountValue.toString().replace(".", ",") : ""}
           </p>
           <SubmitButton
             isFormButton={false}

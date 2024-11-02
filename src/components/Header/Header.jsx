@@ -1,18 +1,15 @@
+import Total from "../../common/Total";
 import HeaderHeading from "./HeaderHeading";
 import HeaderParagraph from "./HeaderParagraph";
 
-const Header = () => {
+const Header = ({total}) => {
   return (
     <header
       className="flex f--wrap f--column a-i--center j-c--center"
       id="header"
     >
       <HeaderHeading />
-      <HeaderParagraph
-        className={"header__paragraph txt-a--center"}
-        id={"header-paragraph"}
-        text={"Bilans wynosi zero"}
-      />
+      <Total balance={total}/>
       <HeaderParagraph
         className={"header__error"}
         id={"header-error"}
