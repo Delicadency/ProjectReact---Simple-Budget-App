@@ -7,6 +7,10 @@
   position: absolute;
   transform: translate(0, -1.2vh);
 }
+.display-block {
+  display: block;
+}
+
 @media (min-width: 1024px) {
   .error_label {
     width: 150px;

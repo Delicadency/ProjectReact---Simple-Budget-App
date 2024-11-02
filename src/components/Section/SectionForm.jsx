@@ -9,15 +9,24 @@ const SectionForm = ({ updateTotal }) => {
   const [textValue, setTextValue] = useState("");
   const [amountValue, setAmountValue] = useState("");
   const [listElements, setListElements] = useState([]);
+  const [textError, setTextError] = useState(false);
+  const [amountError, setAmountError] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (textValue.trim() && amountValue.trim()) {
-      const newAmount = parseFloat(amountValue);
+
+    const isTextEmpty = textValue.trim() === "";
+    const isAmountEmpty = amountValue.trim() === "";
+
+    setTextError(isTextEmpty);
+    setAmountError(isAmountEmpty);
+
+    if (!isTextEmpty && !isAmountEmpty) {
+      const newAmount = parseFloat(amountValue.replace(",", "."));
       const newElement = {
         id: Date.now(),
         text: textValue,
-        amount: amountValue,
+        amount: newAmount,
       };
       setListElements([...listElements, newElement]);
       setTextValue("");
@@ -55,20 +64,22 @@ const SectionForm = ({ updateTotal }) => {
         onSubmit={handleSubmit}
       >
         <Input
-        className={`input input--text input--${type} txt-a--center f-s-14`}
+          className={`input input--text input--${type} txt-a--center f-s-14`}
           prop="text"
           type={type}
           value={textValue}
           onChange={setTextValue}
           isEditing={false}
+          hasError={textError}
         />
         <Input
-        className={`input input--amount input--${type} txt-a--center f-s-14`}
+          className={`input input--amount input--${type} txt-a--center f-s-14`}
           prop="amount"
           type={type}
           value={amountValue}
           onChange={setAmountValue}
           isEditing={false}
+          hasError={amountError}
         />
         <SubmitButton isFormButton={true} listButtonType={""} text={"Dodaj"} />
       </form>

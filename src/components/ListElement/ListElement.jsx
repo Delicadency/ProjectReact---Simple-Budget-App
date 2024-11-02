@@ -13,9 +13,26 @@ const ListElement = ({
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(textValue ?? "");
   const [newAmount, setNewAmount] = useState(amountValue ?? "");
+  const [textError, setTextError] = useState(false);
+  const [amountError, setAmountError] = useState(false);
 
   function handleSave() {
-    const formattedAmount = newAmount.replace(",", ".");
+    const formattedAmount = newAmount.toString().replace(",", ".");
+    
+    if (newText.trim() === "") {
+      setTextError(true);
+      return;
+    } else {
+      setTextError(false);
+    }
+
+    if (formattedAmount === "" || isNaN(parseFloat(formattedAmount))) {
+      setAmountError(true);
+      return;
+    } else {
+      setAmountError(false);
+    }
+
     onEdit(id, newText, parseFloat(formattedAmount));
     setIsEditing(false);
   }
@@ -32,7 +49,8 @@ const ListElement = ({
               type={type}
               value={newText}
               onChange={(value) => setNewText(value)}
-            ></Input>
+              hasError={textError} 
+            />
             <Input
               isEditing={true}
               className={`input input--edit input--${type} txt-a--center f-s-14`}
@@ -40,7 +58,8 @@ const ListElement = ({
               type={type}
               value={newAmount}
               onChange={(value) => setNewAmount(value)}
-            ></Input>
+              hasError={amountError} 
+            />
           </div>
           <SubmitButton
             isFormButton={false}
