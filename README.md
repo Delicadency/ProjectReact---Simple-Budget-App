@@ -22,8 +22,8 @@ cd ProjectReact---Simple-Budget-App
 
 `
 npm install
-
 `
+
 3. Start the development server:
 
 `
