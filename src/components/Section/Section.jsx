@@ -15,7 +15,7 @@ const Section = () => {
           type={type}
         />
         <SectionParagraph
-          text={total.toFixed(2)}
+          text={total.toFixed(2).replace(".",",")}
           id={`total-${type}`}
           type={type}
         />

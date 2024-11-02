@@ -6,22 +6,29 @@ const Input = ({
   onChange = () => {},
   isEditing,
 }) => {
-  const amountPattern = /^\d{0,6}(\,\d{0,2})?$/;
+  const amountPattern = /^\d{0,6}(,\d{0,2})?$/;
   const handleChange = (event) => {
-    const inputValue = event.target.value;
+    let inputValue = event.target.value;
 
-    if (prop === "amount" && !amountPattern.test(inputValue)) {
-      event.target.value = value;
+    inputValue = inputValue.replace(",", ".");
+    if (
+      prop === "amount" &&
+      !amountPattern.test(inputValue.replace(".", ","))
+    ) {
+      event.target.value = value.replace(".", ","); // Przywróć poprawną wartość
     } else {
       onChange(inputValue);
     }
   };
+
+  // Formatowanie wyświetlanej wartości z kropką na przecinek
+  const displayValue = value.replace(".", ",");
   const amountAttributes =
     prop === "amount"
       ? {
           placeholder: "Kwota",
-          pattern: "^\\d{0,6}(\\.\\d{0,2})?$",
           inputMode: "numeric",
+          pattern:"^\\d{0,7}(,\\d{0,2})?$",
           step: "0.01",
           maxLength: "10",
         }
@@ -48,7 +55,7 @@ const Input = ({
         type={prop}
         id={`${type}-${prop}`}
         autoComplete="off"
-        value={value}
+        value={displayValue}
         onChange={handleChange}
         {...amountAttributes}
       ></input>
