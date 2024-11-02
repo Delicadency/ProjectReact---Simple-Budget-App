@@ -1,4 +1,11 @@
-const SectionInput = ({ prop, type, value, onChange }) => {
+const Input = ({
+  className,
+  prop,
+  type,
+  value,
+  onChange = () => {},
+  isEditing,
+}) => {
   const handleChange = (event) => {
     onChange(event.target.value);
   };
@@ -17,7 +24,11 @@ const SectionInput = ({ prop, type, value, onChange }) => {
         };
 
   return (
-    <div className={`input__wrapper--${prop}`}>
+    <div
+      className={
+        isEditing ? `input__wrapper--edit-${prop}` : `input__wrapper--${prop}`
+      }
+    >
       <label
         className="error_label"
         htmlFor={`${type}-${prop}`}
@@ -26,7 +37,7 @@ const SectionInput = ({ prop, type, value, onChange }) => {
         Uzupełnij pole
       </label>
       <input
-        className={`input input--${prop} input--${type} txt-a--center f-s-14"`}
+        className={className}
         type={prop}
         id={`${type}-${prop}`}
         autoComplete="off"
@@ -38,4 +49,4 @@ const SectionInput = ({ prop, type, value, onChange }) => {
   );
 };
 
-export default SectionInput;
+export default Input;

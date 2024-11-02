@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import TypeContext from "../../contexts/TypeContext";
 import SubmitButton from "../../common/SubmitButton";
-import SectionInput from "./SectionInput";
+import Input from "../../common/Input";
 import ListElement from "../ListElement/ListElement";
 
 const SectionForm = ({ updateTotal }) => {
@@ -54,17 +54,21 @@ const SectionForm = ({ updateTotal }) => {
         id={`${type}-form`}
         onSubmit={handleSubmit}
       >
-        <SectionInput
+        <Input
+        className={`input input--text input--${type} txt-a--center f-s-14`}
           prop="text"
           type={type}
           value={textValue}
           onChange={setTextValue}
+          isEditing={false}
         />
-        <SectionInput
+        <Input
+        className={`input input--amount input--${type} txt-a--center f-s-14`}
           prop="amount"
           type={type}
           value={amountValue}
           onChange={setAmountValue}
+          isEditing={false}
         />
         <SubmitButton isFormButton={true} listButtonType={""} text={"Dodaj"} />
       </form>
